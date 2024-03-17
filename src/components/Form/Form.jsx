@@ -1,12 +1,13 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
+import Card from '../Card/Card';
 
 function Form() {
   return (
-    <div className="flex w-full h-screen items-center justify-center">
+    <div className="flex flex-col w-full h-screen   items-center justify-center">
       <form>
         <input
-          className="p-3 rounded-lg outline-none"
+          className="p-3 rounded-lg outline-none min-w-80"
           type="text"
           placeholder="City"
         />
@@ -17,6 +18,8 @@ function Form() {
           Search
         </button>
       </form>
+
+      <Card />
     </div>
   );
 }
