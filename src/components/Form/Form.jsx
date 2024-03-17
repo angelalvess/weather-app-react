@@ -1,12 +1,27 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
+
+import axiosData from '../../services/api';
+import { useState } from 'react';
 import Card from '../Card/Card';
+import initialData from '../../helpers/initialData';
 
 function Form() {
+  const [city, setCity] = useState('');
+  const [data, setData] = useState(initialData);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axiosData(city).then((response) => {
+      setData(response);
+    });
+  };
+
   return (
     <div className="flex flex-col w-full h-screen   items-center justify-center">
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
+          value={city}
+          onChange={({ target: { value } }) => setCity(value)}
           className="p-3 rounded-lg outline-none min-w-80"
           type="text"
           placeholder="City"
@@ -19,7 +34,7 @@ function Form() {
         </button>
       </form>
 
-      <Card />
+      <Card data={data} />
     </div>
   );
 }
