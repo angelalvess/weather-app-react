@@ -6,7 +6,7 @@ function Card({ data }) {
   const { location, current } = data;
 
   return (
-    <div className="bg-white p-6 mt-8 rounded-lg shadow-md mr-20 min-w-[300px] h-[350px] ">
+    <div className="bg-white p-6 mt-8 rounded-lg shadow-md sm:mr-20 min-w-[300px] h-[350px] ">
       <div className="text-center">
         <span className="block text-xl font-bold text-slate-700 ">
           {location.name}

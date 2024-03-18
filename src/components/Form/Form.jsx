@@ -17,12 +17,15 @@ function Form() {
   };
 
   return (
-    <div className="flex flex-col w-full h-screen   items-center justify-center">
-      <form onSubmit={handleSubmit}>
+    <div className="flex flex-col w-full h-screen items-center sm:justify-center p-4">
+      <form
+        onSubmit={handleSubmit}
+        className="fixed bottom-0 w-full flex p-4 sm:relative justify-center"
+      >
         <input
           value={city}
           onChange={({ target: { value } }) => setCity(value)}
-          className="p-3 rounded-lg outline-none min-w-80"
+          className="p-3 rounded-lg outline-none w-full  sm:max-w-[300px] flex-1"
           type="text"
           placeholder="City"
         />
